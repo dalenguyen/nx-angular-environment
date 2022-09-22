@@ -82,6 +82,33 @@
         "jestConfig": "apps/blog/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "copy": {
+      "executor": "./tools/executors/copy:copy",
+      "options": {
+        "flat": true,
+        "all": true,
+        "error": true
+      },
+      "defaultConfiguration": "staging",
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "from": "apps/blog/src/config/production/*",
+              "to": "dist/apps/blog/assets"
+            }
+          ]
+        },
+        "staging": {
+          "fileReplacements": [
+            {
+              "from": "apps/blog/src/config/staging/*",
+              "to": "dist/apps/blog/assets"
+            }
+          ]
+        }
+      }
     }
   },
   "tags": []
