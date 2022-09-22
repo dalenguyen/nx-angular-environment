@@ -24,6 +24,7 @@ specifiers:
   '@nrwl/linter': 14.7.11
   '@nrwl/nx-cloud': latest
   '@nrwl/workspace': 14.7.11
+  '@schematics/angular': ^14.2.3
   '@types/jest': 28.1.1
   '@types/node': 16.11.7
   '@typescript-eslint/eslint-plugin': ^5.36.1
@@ -73,6 +74,7 @@ devDependencies:
   '@nrwl/linter': 14.7.11_vkzhdcaxlgzobdho7vc27sig7a
   '@nrwl/nx-cloud': 14.6.2
   '@nrwl/workspace': 14.7.11_os4shho66bggbcppkjxfaa3ea4
+  '@schematics/angular': 14.2.3
   '@types/jest': 28.1.1
   '@types/node': 16.11.7
   '@typescript-eslint/eslint-plugin': 5.38.0_popx5agpbybrbhscmrxcmbeuri

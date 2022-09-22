@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { AppConfig } from '@dalenguyen/common';
 
 @Component({
   selector: 'dalenguyen-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [JsonPipe],
+  template: `
+    <h1>{{title}}</h1>
+    <pre>{{config | json}}</pre>
+  `,
 })
 export class AppComponent {
-  title = 'blog';
+  title = 'Angular Environment';
+  config = inject(AppConfig)
 }
