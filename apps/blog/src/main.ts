@@ -1,7 +1,7 @@
 import { APP_INITIALIZER, enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { AppConfig, EnvironmentService, initAppConfigFn } from '@dalenguyen/common'
+import { AppConfig, Environment, EnvironmentService, initAppConfigFn } from '@dalenguyen/common'
 
 import { environment } from './environments/environment';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,6 +17,10 @@ fetch('assets/boostrap.config.json')
       providers: [
         importProvidersFrom([HttpClientModule]),
         {
+          provide: Environment,
+          useValue: environment
+        }, 
+        {
           provide: AppConfig,
           useValue: config
         }, 
@@ -27,7 +31,7 @@ fetch('assets/boostrap.config.json')
           provide: APP_INITIALIZER,
           useFactory: initAppConfigFn,
           multi: true,
-          deps: [EnvironmentService]
+          deps: [EnvironmentService, Environment]
         }
       ]
     })

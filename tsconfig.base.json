@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dalenguyen/common": ["libs/common/src/index.ts"]
+      "@dalenguyen/common": ["libs/common/src/index.ts"],
+      "@dalenguyen/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
