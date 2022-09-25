@@ -1,4 +1,4 @@
 {
-    "production": false,
-    "environment": "staging"
+    "apiUrl": "https://staging.example.com"
+
 }

@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppConfig } from '@dalenguyen/common';
+import { Environment, EnvironmentService } from '@dalenguyen/common';
 
 @Component({
   selector: 'dalenguyen-avatar',
@@ -8,14 +8,12 @@ import { AppConfig } from '@dalenguyen/common';
   imports: [CommonModule],
   template: `
     From Avatar
-    <pre>{{appConfig | json}}</pre>
+    <pre>{{ env | json }}</pre>
+    <pre>{{ envService.getAppConfig() | json }}</pre>
   `,
   styleUrls: ['./avatar.component.scss'],
 })
-export class AvatarComponent implements OnInit {
-  appConfig = inject(AppConfig)
-
-  constructor() {}
-
-  ngOnInit(): void {}
+export class AvatarComponent {
+  env = inject(Environment);
+  envService = inject(EnvironmentService);
 }

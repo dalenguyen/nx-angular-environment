@@ -1,7 +1,7 @@
 import { APP_INITIALIZER, enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { AppConfig, Environment, EnvironmentService, initAppConfigFn } from '@dalenguyen/common'
+import {  BoostrapConfig, Environment, EnvironmentService, initAppConfigFn } from '@dalenguyen/common'
 
 import { environment } from './environments/environment';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +21,7 @@ fetch('assets/boostrap.config.json')
           useValue: environment
         }, 
         {
-          provide: AppConfig,
+          provide: BoostrapConfig,
           useValue: config
         }, 
         // A DI token that you can use to provide one or more initialization functions.
@@ -31,7 +31,7 @@ fetch('assets/boostrap.config.json')
           provide: APP_INITIALIZER,
           useFactory: initAppConfigFn,
           multi: true,
-          deps: [EnvironmentService, Environment]
+          deps: [EnvironmentService]
         }
       ]
     })

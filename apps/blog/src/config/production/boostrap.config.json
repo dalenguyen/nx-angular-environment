@@ -1,4 +1,4 @@
 {
-    "production": true,
-    "environment": "production"
+    "apiUrl": "https://example.com"
+
 }

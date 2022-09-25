@@ -1,4 +1,3 @@
 {
-    "production": false,
-    "environment": "local"
+    "apiUrl": "https://staging.example.com"
 }
