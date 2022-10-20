@@ -1,0 +1,9 @@
+{
+    "executors": {
+        "copy": {
+            "implementation": "./impl",
+            "schema": "./schema.json",
+            "description": "Runs `copy & replace`"
+        }
+    }
+}

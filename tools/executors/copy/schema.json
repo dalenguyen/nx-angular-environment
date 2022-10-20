@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "cli": "nx",
+    "properties": {
+        "from": {
+            "type": "string",
+            "description": "from glob"
+        },
+        "to": {
+            "type": "string",
+            "description": "to glob"
+        }
+    }
+}
