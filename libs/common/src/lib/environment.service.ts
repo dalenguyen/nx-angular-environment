@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { AppConfig, BoostrapConfig } from './environment.config';
+import { AppConfig, BootstrapConfig } from './environment.config';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 
@@ -11,7 +11,7 @@ export const initAppConfigFn = (envService: EnvironmentService) => () =>
 })
 export class EnvironmentService {
   http = inject(HttpClient);
-  config = inject(BoostrapConfig);
+  config = inject(BootstrapConfig);
 
   private appConfig: AppConfig | null = null;
 
