@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { BootstrapConfig, Environment } from '@dalenguyen/common';
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { AvatarComponent } from './avatar.component';
 
 describe('AvatarComponent', () => {
@@ -8,7 +9,19 @@ describe('AvatarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AvatarComponent],
+      imports: [AvatarComponent, HttpClientTestingModule],
+      providers: [{
+        provide: Environment,
+        useValue: {
+          environment: 'test',
+          production: false
+        }
+      }, {
+        provide: BootstrapConfig,
+        useValue: {
+          apiUrl: 'https://testing.example.com'
+        }
+      }]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AvatarComponent);
@@ -18,5 +31,9 @@ describe('AvatarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Environment', () => {
+    expect(component.env).toEqual({"environment": "test", "production": false});
   });
 });

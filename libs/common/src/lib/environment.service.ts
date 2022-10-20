@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 
 export const initAppConfigFn = (envService: EnvironmentService) => () =>
+  // any remote API will work
   envService.loadAppConfig('assets/bootstrap.config.json');
 
 @Injectable({
@@ -16,7 +17,6 @@ export class EnvironmentService {
   private appConfig: AppConfig | null = null;
 
   async loadAppConfig(path: string): Promise<void> {
-    console.log(this.config);
     this.appConfig = await lastValueFrom(this.http.get<AppConfig>(path));
   }
 
