@@ -1,6 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { Environment, EnvironmentService } from '@dalenguyen/common';
+import { BootstrapConfig, Environment, EnvironmentService } from '@dalenguyen/common';
 import { AvatarComponent } from '@dalenguyen/shared/ui';
 
 @Component({
@@ -12,6 +12,7 @@ import { AvatarComponent } from '@dalenguyen/shared/ui';
     From App Component
     <pre>{{ env | json }}</pre>
     <pre>{{ envService.getAppConfig() | json }}</pre>
+    <pre>{{ config | json }}</pre>
     <dalenguyen-avatar></dalenguyen-avatar>
   `,
 })
@@ -19,4 +20,5 @@ export class AppComponent {
   title = 'Angular Environment';
   env = inject(Environment);
   envService = inject(EnvironmentService);
+  config = inject(BootstrapConfig)
 }

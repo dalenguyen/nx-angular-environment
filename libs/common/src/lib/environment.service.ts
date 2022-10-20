@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 
 export const initAppConfigFn = (envService: EnvironmentService) => () =>
-  envService.loadAppConfig('assets/boostrap.config.json');
+  envService.loadAppConfig('assets/bootstrap.config.json');
 
 @Injectable({
   providedIn: 'root',
